@@ -1,0 +1,13 @@
+	<ion-view view-title="{{ hpromo.title }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-hpromo_singles" class="page-hpromo_singles">
+					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item noborder"><img class="full-image" image-lazy-loader="lines" image-lazy-src="{{hpromo.image}}" /></div>
+              		<p class="item item-icon-left noborder" ><i class="icon ion-ios-calendar"></i>{{hpromo.start_date}} - {{hpromo.end_date}}</p>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="hpromo.content | strHTML"></div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

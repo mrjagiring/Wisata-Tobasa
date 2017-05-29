@@ -1,0 +1,30 @@
+	<ion-view view-title="{{ inevent.title }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-inevent_singles" class="page-inevent_singles">
+					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item item-divider"  ng-bind-html="inevent.title | to_trusted">{{inevent.title}}</div>
+					<div class="item noborder"><img class="full-image" image-lazy-loader="lines" image-lazy-src="{{inevent.image}}" /></div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="inevent.content | strHTML"></div>
+					<p class="padding pull-left" >start_date{{inevent.start_date}}</p>
+					<p class="padding pull-left" >end_date{{inevent.end_date}}</p>
+					<!--
+					<div class="item">
+					<p>share</p>
+					<div class="button-bar">
+						<button class="button button-small button-assertive icon ion-social-googleplus" ng-click="openURL('https://plus.google.com/share?url=' + inevent.share)"></button>
+						<button class="button button-small button-positive icon ion-social-facebook" ng-click="openURL('https://facebook.com/sharer/sharer.php?u=' + inevent.share)"></button>
+						<button class="button button-small button-calm icon ion-social-twitter" ng-click="openURL('https://twitter.com/share?url=' + inevent.share)"></button>
+						<button class="button button-small button-assertive-900 icon ion-social-pinterest" ng-click="openURL('https://pinterest.com/pin/create/bookmarklet/?&url=' + inevent.share)"></button>
+						<button class="button button-small button-positive-900 icon ion-social-linkedin" ng-click="openURL('https://www.linkedin.com/shareArticle?url=' + inevent.share)"></button>
+					</div>
+					</div>
+					-->
+					<div class="item">
+						<button run-social-sharing message="{{ inevent.share }}" class="button button-small ion-android-share-alt button-outline button-positive icon-left">share</button>
+					</div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
